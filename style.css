@@ -7,10 +7,10 @@
     flex-direction: row;
 }
 .inside{
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .side{
     width: 28%;
@@ -70,6 +70,10 @@ hr{
     margin: 15px 0px;
     font-size: 18px;
 }
+.answer button:hover{
+    background-color: rgba(0, 0, 0, 0.281);
+    color: aliceblue;
+}
 .numb{
     display: flex;
     justify-content: flex-start;
@@ -88,6 +92,22 @@ hr{
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 15rem;
     text-shadow: 8px 8px 8px rgb(17, 4, 4);
+}
+.loader{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: dotted 7px black;
+    border-top: 7px dotted rgb(192, 192, 209);
+    animation: spin 2s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (max-width: 950px){
@@ -143,5 +163,9 @@ hr{
         width: 100%;
         font-weight: 900;
         text-align: center;
+    }
+    .answer button:hover{
+        background-color: rgba(0, 0, 0, 0.808);
+        color: aliceblue;
     }
 }

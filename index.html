@@ -15,7 +15,10 @@
             <h1 class="js">Js</h1>
             <h1 class="oop">oop</h1>
         </div>
-        <main>
+        <main class="quizBox">
+            <center>
+                <div class="loader"></div>
+            </center>
            <div class="inside">
             <div class="quiz">
                 <h1>Quiz</h1>
@@ -28,12 +31,12 @@
                 <p id="questions"></p>
                 <br>
                 <div  class="answer">
-                    <button id="ans1"></button>
-                    <button id="ans2"></button>
+                    <button id="ans1" class="button" onclick="playQuiz()"></button>
+                    <button id="ans2" class="button" onclick="playQuiz()"></button>
                 </div>
                 <div class="answer">
-                    <button id="ans3"></button>
-                    <button id="ans4"></button>
+                    <button id="ans3" class="button" onclick="playQuiz()"></button>
+                    <button id="ans4" class="button" onclick="playQuiz()"></button>
                 </div>
             </div>
             <br>
@@ -41,7 +44,7 @@
             <br>
             <hr>
         </div>
-        <p class="numb">Question 1 of 20</p>
+        <p class="numb" id="progress">Question 1 of 20</p>
         </main>
     </div>
     <script src="script.js"></script>
