@@ -81,7 +81,7 @@ for (const button of buttons){
             ans4.innerHTML =arr[nextQuestion].options[3];
         }, 1000);
        setTimeout(() => {
-        if(nextQuestion == 5){
+        if(nextQuestion == 20){
             insid.style.display="none";
             progress.style.display="none";
             loader.style.display="flex";
