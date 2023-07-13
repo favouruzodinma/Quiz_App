@@ -18,7 +18,7 @@ let endgame = document.getElementById("endgame");
 let arr =[];
 let answerCount =0;
 let nextQuestion = 0;
-let api ="https://opentdb.com/api.php?amount=20&category=9&difficulty=medium&type=multiple";
+let api ="https://opentdb.com/api.php?amount=40&category=9&difficulty=medium&type=multiple";
 fetch(api)
 .then((response)=> response.json())
 .then((data)=>{
@@ -47,7 +47,8 @@ fetch(api)
 });
 for (let i = 0; i < 19; i++) {
        console.log(i);
-      }
+}
+
 for (const button of buttons){
     let btn =[ans1, ans2, ans3, ans4];
  button.onclick = function() {
@@ -79,7 +80,7 @@ for (const button of buttons){
             ans2.innerHTML =arr[nextQuestion].options[1];
             ans3.innerHTML =arr[nextQuestion].options[2];
             ans4.innerHTML =arr[nextQuestion].options[3];
-        }, 1000);
+            }, 1000);
        setTimeout(() => {
         if(nextQuestion == 20){
             insid.style.display="none";
