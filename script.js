@@ -9,6 +9,10 @@ let buttons = document.querySelectorAll(".button");
 let progress= document.getElementById("progress");
 let score = document.getElementById("score");
 let scoreDiv = document.querySelector(".scoreDiv");
+let right = document.getElementById("right");
+let wrong = document.getElementById("wrong");
+let endgame = document.getElementById("endgame");
+
 
 
 let arr =[];
@@ -51,6 +55,7 @@ for (const button of buttons){
         if(button.innerText === arr[nextQuestion].answer){
             button.style.backgroundColor ="green"
             button.style.color ="white";
+            endgame.play();
             answerCount ++;
             setTimeout(() => {
                 button.style.backgroundColor ="rgba(0, 0, 0, 0.568)"
@@ -59,7 +64,7 @@ for (const button of buttons){
         }else{
             button.style.backgroundColor ="red"
             button.style.color ="white";
-                        
+            wrong.play();
             setTimeout(() => {
                 button.style.backgroundColor ="rgba(0, 0, 0, 0.568)"
                 button.style.color ="aliceblue";
@@ -76,11 +81,12 @@ for (const button of buttons){
             ans4.innerHTML =arr[nextQuestion].options[3];
         }, 1000);
        setTimeout(() => {
-        if(nextQuestion == 20){
+        if(nextQuestion == 5){
             insid.style.display="none";
             progress.style.display="none";
             loader.style.display="flex";
            setTimeout(()=>{
+            right.play();
             loader.style.display="none";
             scoreDiv.style.display="grid";
             score.innerText=` ${answerCount} / 20`

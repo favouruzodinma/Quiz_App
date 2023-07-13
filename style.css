@@ -155,7 +155,7 @@ hr{
     }
     .scoreDiv{
         height: 300px;
-        width: 100vh;
+        width: 200px;
         justify-items: center;
         display: none;
         align-content: center;
