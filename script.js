@@ -7,8 +7,12 @@ let insid = document.querySelector(".inside");
 let loader = document.querySelector(".loader");
 let buttons = document.querySelectorAll(".button");
 let progress= document.getElementById("progress");
+let score = document.getElementById("score");
+let scoreDiv = document.querySelector(".scoreDiv");
+
 
 let arr =[];
+let answerCount =0;
 let nextQuestion = 0;
 let api ="https://opentdb.com/api.php?amount=20&category=9&difficulty=medium&type=multiple";
 fetch(api)
@@ -33,6 +37,7 @@ fetch(api)
     ans4.innerHTML =arr[nextQuestion].options[3];
     loader.style.display="none";
     insid.style.display="flex";
+    progress.style.display="flex";
     console.log(arr[nextQuestion].answer);
 
 });
@@ -46,7 +51,7 @@ for (const button of buttons){
         if(button.innerText === arr[nextQuestion].answer){
             button.style.backgroundColor ="green"
             button.style.color ="white";
-            
+            answerCount ++;
             setTimeout(() => {
                 button.style.backgroundColor ="rgba(0, 0, 0, 0.568)"
                 button.style.color ="aliceblue";
@@ -69,6 +74,18 @@ for (const button of buttons){
             ans2.innerHTML =arr[nextQuestion].options[1];
             ans3.innerHTML =arr[nextQuestion].options[2];
             ans4.innerHTML =arr[nextQuestion].options[3];
-        }, 3000);
+        }, 1000);
+       setTimeout(() => {
+        if(nextQuestion == 20){
+            insid.style.display="none";
+            progress.style.display="none";
+            loader.style.display="flex";
+           setTimeout(()=>{
+            loader.style.display="none";
+            scoreDiv.style.display="grid";
+            score.innerText=` ${answerCount} / 20`
+           }, 1000);
+        }
+       }, 1000);
     };
 }

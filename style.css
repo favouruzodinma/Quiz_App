@@ -75,7 +75,7 @@ hr{
     color: aliceblue;
 }
 .numb{
-    display: flex;
+    display: none;
     justify-content: flex-start;
     padding-top: 40px;
     padding-left: 50px;
@@ -86,6 +86,15 @@ hr{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 15rem;
     text-shadow: 8px 8px 8px rgb(17, 4, 4);
+}
+.scoreDiv{
+    height: 200px;
+    width: 400px;
+    justify-items: center;
+    display: none;
+    align-content: center;
+    line-height: 30px;
+    box-shadow: -1px 1px 5px 1px rgba(34, 6, 6, 0.69);
 }
 .js{
     font-size: 22vmax;
